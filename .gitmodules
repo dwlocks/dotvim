@@ -1,0 +1,9 @@
+[submodule "bundle/pathogen"]
+	path = bundle/pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "bundle/ScrollColors"]
+	path = bundle/ScrollColors
+	url = git://github.com/vim-scripts/ScrollColors.git
+[submodule "bundle/Colour-Sampler-Pack"]
+	path = bundle/Colour-Sampler-Pack
+	url = git://github.com/vim-scripts/Colour-Sampler-Pack.git
