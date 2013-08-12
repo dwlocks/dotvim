@@ -7,3 +7,6 @@
 [submodule "bundle/Colour-Sampler-Pack"]
 	path = bundle/Colour-Sampler-Pack
 	url = git://github.com/vim-scripts/Colour-Sampler-Pack.git
+[submodule "bundle/openscad"]
+	path = bundle/openscad
+	url = https://github.com/torrancew/vim-openscad.git
