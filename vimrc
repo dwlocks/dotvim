@@ -1,10 +1,10 @@
 " use vimx or gvim -v
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
-"colorscheme delek
+
+set mouse=a
+
 colorscheme fnaqevan
-"if $SUNNYDAY=true then colorscheme shine (gui), ron (xterm)
-"How to do the above.  working outside requires white on black
 set autoindent
 set shiftwidth=4
 set softtabstop=4
@@ -18,10 +18,8 @@ set listchars=tab:» ,trail:·,nbsp:·
 set fo+=tc
 
 set showmode number
-set mouse=a
-
 set showmatch
-:source $VIMRUNTIME/macros/matchit.vim
+source $VIMRUNTIME/macros/matchit.vim
 
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
