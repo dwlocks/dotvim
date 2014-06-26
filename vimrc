@@ -1,7 +1,9 @@
 " use vimx or gvim -v
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
-"colorscheme delek
+
+set mouse=a
+
 colorscheme fnaqevan
 :filetype on
 :syntax on
@@ -29,7 +31,7 @@ set statusline+=%c\  " column number
 set statusline+=%m " modified or not.
 
 set showmatch
-:source $VIMRUNTIME/macros/matchit.vim
+source $VIMRUNTIME/macros/matchit.vim
 
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
