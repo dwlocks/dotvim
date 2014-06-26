@@ -10,3 +10,6 @@
 [submodule "bundle/openscad"]
 	path = bundle/openscad
 	url = https://github.com/torrancew/vim-openscad.git
+[submodule "bundle/vinegar"]
+	path = bundle/vinegar
+	url = https://github.com/tpope/vim-vinegar.git

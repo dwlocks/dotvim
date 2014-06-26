@@ -3,8 +3,8 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 "colorscheme delek
 colorscheme fnaqevan
-"if $SUNNYDAY=true then colorscheme shine (gui), ron (xterm)
-"How to do the above.  working outside requires white on black
+:filetype on
+:syntax on
 set autoindent
 set shiftwidth=4
 set softtabstop=4
@@ -18,7 +18,15 @@ set listchars=tab:» ,trail:·,nbsp:·
 set fo+=tc
 
 set showmode number
-set mouse=a
+set mouse=n
+
+" Statusline building. escape spaces
+set laststatus=2
+set statusline=%2n\ " buffer number
+set statusline+=%.50F " Full path, max of 50chars
+set statusline+=%= " other end
+set statusline+=%c\  " column number
+set statusline+=%m " modified or not.
 
 set showmatch
 :source $VIMRUNTIME/macros/matchit.vim
@@ -30,10 +38,8 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 :noremap <Space> 10jzz
 :noremap <Backspace> 10kzz
 "Put in my name when I type mee, cmd or insert mode.
-:map mee Dan Locks <dwlocks at zmanda dot com>
-:imap mee Dan Locks <dwlocks at zmanda dot com>
-:map Mee Dan Locks <dwlocks@zmanda.com>
-:imap Mee Dan Locks <dwlocks@zmanda.com>
+:map Mee Dan Locks <dlocks@here.com>
+:imap Mee Dan Locks <dlocks@here.com>
 "Commit entry macro
 :map <special> <F7> :0r!~/Scripts/commit_log.sh<CR>
 :map! <special> <F7> <Esc> :0r!~/Scripts/commit_log.sh<CR>
