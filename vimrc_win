@@ -1,10 +1,7 @@
-" use vimx or gvim -v
-runtime bundle/pathogen/autoload/pathogen.vim
+runtime bundle\pathogen\autoload\pathogen.vim
 call pathogen#infect()
-
-set mouse=a
-
 colorscheme fnaqevan
+
 :filetype on
 :syntax on
 set autoindent
