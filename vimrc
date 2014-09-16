@@ -2,10 +2,15 @@
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+" Bundle settings
+"
+" Disable rope (from jedi-vim)
+let g:pymode_rope = 0
+
 set mouse=a
 
 colorscheme fnaqevan
-:filetype on
+filetype plugin indent on
 :syntax on
 set autoindent
 set shiftwidth=4
@@ -30,6 +35,7 @@ set statusline+=%= " other end
 set statusline+=%c\  " column number
 set statusline+=%m " modified or not.
 
+set hlsearch " highlight search matches, use :noh to stop
 set showmatch
 source $VIMRUNTIME/macros/matchit.vim
 
