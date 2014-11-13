@@ -1,4 +1,5 @@
 " use vimx or gvim -v
+set runtimepath+=/usr/share/vim/addons
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
@@ -9,7 +10,8 @@ let g:pymode_rope = 0
 
 set mouse=a
 
-colorscheme fnaqevan
+set background=dark
+colorscheme solarized
 filetype plugin indent on
 :syntax on
 set autoindent
