@@ -23,7 +23,7 @@ set shiftround
 set list
 " Show tabs, trailing whitespace, and orphan whitespace
 " tab chars: ^k->> ^k-1N (ascii 175, utf-16 8194), trail: ^k-.M (ascii 250)
-set listchars=tab:» ,trail:·,nbsp:·
+set listchars=eol:¶,tab:» ,trail:·,nbsp:·
 set fo+=tc
 
 set showmode number
