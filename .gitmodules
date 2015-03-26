@@ -16,3 +16,6 @@
 [submodule "bundle/jedi-vim"]
 	path = bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "bundle/robotframework-vim"]
+	path = bundle/robotframework-vim
+	url = https://github.com/mfukar/robotframework-vim
