@@ -22,3 +22,6 @@
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = https://github.com/godlygeek/csapprox.git
+[submodule "bundle/dockerfile-vim"]
+	path = bundle/dockerfile-vim
+	url = git@github.com:honza/dockerfile.vim.git
