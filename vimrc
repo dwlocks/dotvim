@@ -14,6 +14,7 @@ set background=dark
 colorscheme solarized
 filetype plugin indent on
 :syntax on
+set modeline
 set autoindent
 set shiftwidth=4
 set softtabstop=4
@@ -23,7 +24,7 @@ set shiftround
 set list
 " Show tabs, trailing whitespace, and orphan whitespace
 " tab chars: ^k->> ^k-1N (ascii 175, utf-16 8194), trail: ^k-.M (ascii 250)
-set listchars=eol:¶,tab:» ,trail:·,nbsp:·
+set listchars=tab:» ,trail:·,nbsp:·
 set fo+=tc
 
 set showmode number
@@ -47,6 +48,15 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 :imap jk <Esc>
 :noremap <Space> 10jzz
 :noremap <Backspace> 10kzz
+
+"copy
+vmap <F7> "+ygv"zy`>
+"paste (Shift-F7 to paste after normal cursor, Ctrl-F7 to paste over visual selection)
+nmap <F7> "zgP
+nmap <S-F7> "zgp
+imap <F7> <C-r><C-o>z
+vmap <C-F7> "zp`]
+cmap <F7> <C-r><C-o>z
 
 "ChangeLog mode stuff:
 let g:changelog_spacing_errors=1
