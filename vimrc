@@ -14,6 +14,13 @@ set background=dark
 colorscheme solarized
 filetype plugin indent on
 :syntax on
+
+" help for highly nested languages
+autocmd Filetype xml,html,jss,css,xsd set tabstop=2
+autocmd Filetype xml,html,jss,css,xsd set shiftwidth=2
+
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
 set modeline
 set autoindent
 set shiftwidth=4
