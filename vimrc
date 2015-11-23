@@ -10,14 +10,21 @@ let g:pymode_rope = 0
 
 set mouse=a
 
+if has('gui_running')
+    "
+else
+    set t_Co=16
+    let g:solarized_termcolors=16
+endif
 set background=dark
 colorscheme solarized
 filetype plugin indent on
-:syntax on
+syntax on
 
 " help for highly nested languages
-autocmd Filetype xml,html,jss,css,xsd set tabstop=2
-autocmd Filetype xml,html,jss,css,xsd set shiftwidth=2
+autocmd Filetype xml,html,jss,css,xsd,yml set tabstop=2
+autocmd Filetype xml,html,jss,css,xsd,yml set shiftwidth=2
+autocmd FileType sh setlocal expandtab shiftwidth=4 softtabstop=4
 
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
@@ -52,9 +59,9 @@ source $VIMRUNTIME/macros/matchit.vim
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 "use jk for escape when inserting
-:imap jk <Esc>
-:noremap <Space> 10jzz
-:noremap <Backspace> 10kzz
+imap jk <Esc>
+noremap <Space> 10jzz
+noremap <Backspace> 10kzz
 
 "copy
 vmap <F7> "+ygv"zy`>
