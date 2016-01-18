@@ -1,12 +1,32 @@
 " use vimx or gvim -v
-set runtimepath+=/usr/share/vim/addons
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
+set nocompatible
 
-" Bundle settings
-"
-" Disable rope (from jedi-vim)
+" Vundle stuff
+filetype off
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" Vundle Bundles
+Bundle 'gmarik/vundle'
+
+" Solarized colorscheme
+Bundle 'altercation/vim-colors-solarized'
+
+" directory browser
+Bundle 'tpope/vim-vinegar'
+
+" Python autocomplete
+Bundle 'davidhalter/jedi-vim'
+" Disable rope (from jedi-vim) 'cause it seems slow
 let g:pymode_rope = 0
+
+" Various syntaxy things
+Bundle 'torrancew/vim-openscad'
+Bundle 'mfukar/robotframework-vim'
+Bundle 'sudar/vim-arduino-syntax'
+Plugin 'ekalinin/Dockerfile.vim'
+Bundle 'othree/xml.vim'
+
 
 set mouse=a
 
