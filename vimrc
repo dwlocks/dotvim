@@ -3,11 +3,11 @@ set nocompatible
 
 " Vundle stuff
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " Vundle Bundles
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 
 " Solarized colorscheme
 Bundle 'altercation/vim-colors-solarized'
