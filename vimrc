@@ -2,6 +2,7 @@
 set nocompatible
 
 " Vundle stuff
+" type :PluginUpdate or :PluginInstall to do those things
 filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
@@ -25,6 +26,9 @@ Bundle 'torrancew/vim-openscad'
 Bundle 'mfukar/robotframework-vim'
 Bundle 'sudar/vim-arduino-syntax'
 Plugin 'ekalinin/Dockerfile.vim'
+Bundle 'derekwyatt/vim-scala'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Bundle 'othree/xml.vim'
 
 
@@ -38,16 +42,11 @@ else
 endif
 set background=dark
 colorscheme solarized
+
+" See after/ftplugin/* for settings I've overridden from default
 filetype plugin indent on
 syntax on
 
-" help for highly nested languages
-autocmd Filetype xml,html,jss,css,xsd,yml set tabstop=2
-autocmd Filetype xml,html,jss,css,xsd,yml set shiftwidth=2
-autocmd FileType sh setlocal expandtab shiftwidth=4 softtabstop=4
-
-let g:xml_syntax_folding=1
-au FileType xml setlocal foldmethod=syntax
 set modeline
 set autoindent
 set shiftwidth=4
