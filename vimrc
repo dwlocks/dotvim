@@ -1,35 +1,32 @@
 " use vimx or gvim -v
 set nocompatible
-
-" Vundle stuff
 " type :PluginUpdate or :PluginInstall to do those things
-filetype off
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-
-" Vundle Bundles
-Bundle 'VundleVim/Vundle.vim'
+call plug#begin()
 
 " Solarized colorscheme
-Bundle 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " directory browser
-Bundle 'tpope/vim-vinegar'
+Plug 'tpope/vim-vinegar'
+
+" surround helper
+Plug 'tpope/vim-surround'
 
 " Python autocomplete
-Bundle 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 " Disable rope (from jedi-vim) 'cause it seems slow
 let g:pymode_rope = 0
 
+" Extra match targets
+Plug 'wellle/targets.vim'
 " Various syntaxy things
-Bundle 'torrancew/vim-openscad'
-Bundle 'mfukar/robotframework-vim'
-Bundle 'sudar/vim-arduino-syntax'
-Plugin 'ekalinin/Dockerfile.vim'
-Bundle 'derekwyatt/vim-scala'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Bundle 'othree/xml.vim'
+Plug 'sudar/vim-arduino-syntax'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/xml.vim'
+
+call plug#end()
 
 
 set mouse=a
@@ -41,11 +38,10 @@ else
     let g:solarized_termcolors=16
 endif
 set background=dark
-colorscheme solarized
+colorscheme delek
 
-" See after/ftplugin/* for settings I've overridden from default
-filetype plugin indent on
-syntax on
+" Prevent swapfiles for gopass
+autocmd BufNewFile,BufRead /dev/shm/gopass* setlocal noswapfile nobackup noundofile viminfo=""
 
 set modeline
 set autoindent
