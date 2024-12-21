@@ -1,9 +1,32 @@
-runtime bundle\pathogen\autoload\pathogen.vim
-call pathogen#infect()
+set nocompatible
+" type :PlugUpdate or :PlugInstall to do those things
+call plug#begin()
+" directory browser
+Plug 'tpope/vim-vinegar'
+
+" surround helper
+Plug 'tpope/vim-surround'
+
+" Python autocomplete
+Plug 'davidhalter/jedi-vim'
+" Disable rope (from jedi-vim) 'cause it seems slow
+let g:pymode_rope = 0
+
+" Extra match targets
+Plug 'wellle/targets.vim'
+" Various syntaxy things
+Plug 'sudar/vim-arduino-syntax'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/xml.vim'
+
+call plug#end()
+
 colorscheme fnaqevan
 
-:filetype on
-:syntax on
+" Prevent swapfiles for gopass
+autocmd BufNewFile,BufRead /dev/shm/gopass* setlocal noswapfile nobackup noundofile viminfo=""
+
 set autoindent
 set shiftwidth=4
 set softtabstop=4
@@ -27,6 +50,7 @@ set statusline+=%= " other end
 set statusline+=%c\  " column number
 set statusline+=%m " modified or not.
 
+set hlsearch " highlight search matches, use :noh to stop
 set showmatch
 source $VIMRUNTIME/macros/matchit.vim
 
@@ -40,8 +64,8 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 "ChangeLog mode stuff:
 let g:changelog_spacing_errors=1
 let g:changelog_new_date_format = "%d  %u\n\t* %c\n\n"
-let g:changelog_username = "Dan Locks <danlocks@gmail.com>"
 au BufRead,BufNewFile ChangeLog set noexpandtab
+autocmd BufNewFile,BufRead commit.txt set textwidth=70
 
 "f2 save and exit.
 :map <special> <F2> ZZ
@@ -55,7 +79,6 @@ map <Esc>l :wincmd l<CR>
 "map <Esc>J :wincmd J<CR>
 "map <Esc>K :wincmd K<CR>
 "map <Esc>L :wincmd L<CR>
-autocmd BufNewFile,BufRead commit.txt set textwidth=70
 
 "open a new window with the output of the command given
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)

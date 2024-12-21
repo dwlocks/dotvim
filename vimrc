@@ -1,11 +1,7 @@
 " use vimx or gvim -v
 set nocompatible
-" type :PluginUpdate or :PluginInstall to do those things
+" type :PlugUpdate or :PlugInstall to do those things
 call plug#begin()
-
-" Solarized colorscheme
-Plug 'altercation/vim-colors-solarized'
-
 " directory browser
 Plug 'tpope/vim-vinegar'
 
@@ -22,22 +18,13 @@ Plug 'wellle/targets.vim'
 " Various syntaxy things
 Plug 'sudar/vim-arduino-syntax'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'derekwyatt/vim-scala'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/xml.vim'
 
 call plug#end()
 
-
 set mouse=a
 
-if has('gui_running')
-    "
-else
-    set t_Co=16
-    let g:solarized_termcolors=16
-endif
-set background=dark
 colorscheme delek
 
 " Prevent swapfiles for gopass
@@ -57,7 +44,7 @@ set listchars=tab:» ,trail:·,nbsp:·
 set fo+=tc
 
 set showmode number
-set mouse=n
+"set mouse=n
 
 " Statusline building. escape spaces
 set laststatus=2
@@ -90,8 +77,8 @@ cmap <F7> <C-r><C-o>z
 "ChangeLog mode stuff:
 let g:changelog_spacing_errors=1
 let g:changelog_new_date_format = "%d  %u\n\t* %c\n\n"
-let g:changelog_username = "Dan Locks <danlocks@gmail.com>"
 au BufRead,BufNewFile ChangeLog set noexpandtab
+autocmd BufNewFile,BufRead commit.txt set textwidth=70
 
 "f2 save and exit.
 :map <special> <F2> ZZ
@@ -105,7 +92,6 @@ map <Esc>l :wincmd l<CR>
 "map <Esc>J :wincmd J<CR>
 "map <Esc>K :wincmd K<CR>
 "map <Esc>L :wincmd L<CR>
-autocmd BufNewFile,BufRead commit.txt set textwidth=70
 
 "open a new window with the output of the command given
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
